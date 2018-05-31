@@ -1,0 +1,25 @@
+{
+	"name": "socola/socola-liblary",
+	"description": "Liblary of Socola",
+	"type": "liblary",
+	"license": "MIT",
+	"authors": [
+	{
+		"name": "Socola",
+		"email": "TokenTien@gmail.com"
+	}],
+	"require-dev": {
+        "phpdocumentor/phpdocumentor": "2.*"
+    },
+	"require":{
+
+	},
+	"autoload":
+	{
+		"psr-4":
+		{
+			"Socola\\": "src/Socola",
+			"Socola\\Facebook\\": "src/Socola/Facebook"
+		}
+	}
+}
