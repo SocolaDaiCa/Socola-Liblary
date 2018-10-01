@@ -12,7 +12,8 @@
         "phpdocumentor/phpdocumentor": "2.*"
     },
 	"require":{
-
+		"ixudra/curl": "^6.16",
+		"google/apiclient": "^2.0"
 	},
 	"autoload":
 	{

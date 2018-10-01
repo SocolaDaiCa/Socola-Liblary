@@ -9,25 +9,24 @@
  */
 namespace Socola\Google;
 
-use Socola\Curl;
+use Socola\Google\Drive\File;
+use Socola\Google\Drive\Folder;
+use Socola\Google\Drive\Video;
 
 class Drive
 {
-	public static function getFileInFolder($urlFolder)
+	public static function video($url)
 	{
-		$urlFolder = str_replace('.com/open?id=', '.com/drive/folders/', $urlFolder);
-		$urlFolder = explode('?', $urlFolder)[0];
-		$html = '';
-		$id = explode("/",$urlFolder);
-		$id = array_pop($id);
-		$endPoint = "https://www.googleapis.com/drive/v2/files?q=%27{$id}%27%20in%20parents&maxResults=9999&key=AIzaSyCISllkltIqYjJs35a3mLkJ5iT-awGrNpA";
-		$jsonString = Curl::get($endPoint);
-		$json = json_decode($jsonString);
-
-		return $json->items;
+		return new Video($url);
 	}
-	public function getLink($urlFile)
+
+	public static function folder($url)
 	{
-		
+		return new Folder($url);
+	}
+
+	public static function file($url)
+	{
+		return new File($url);
 	}
 }
